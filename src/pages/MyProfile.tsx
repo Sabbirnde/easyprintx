@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ProfileTabs from "@/components/ProfileTabs";
 import PersonalInformation from "@/components/PersonalInformation";
 import ProtectedRoute from "@/components/ProtectedRoute";
+import { UpdateOwnerName } from "@/components/UpdateOwnerName";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User, Star } from "lucide-react";
 
@@ -12,7 +13,12 @@ const MyProfile = () => {
   const renderTabContent = () => {
     switch (activeTab) {
       case "profile":
-        return <PersonalInformation />;
+        return (
+          <div className="space-y-6">
+            <PersonalInformation />
+            <UpdateOwnerName />
+          </div>
+        );
       case "preferences":
         return (
           <div className="bg-card rounded-lg border border-border p-6 text-center">
